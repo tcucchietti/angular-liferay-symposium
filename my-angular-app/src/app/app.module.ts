@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
 import { environment } from "../environments/environment";
 import { APP_BASE_HREF } from "@angular/common";
+import { BaseComponent } from './base/base.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 Bundle-Name: my-angular-portlet
-Bundle-SymbolicName: fr.sedona.liferay
+Bundle-SymbolicName: angular-portlet-bundle
 Bundle-Version: 1.0.0
 -contract: JavaPortlet
 -jsp: *.jsp,*.jspf
