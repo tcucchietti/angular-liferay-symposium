@@ -19,7 +19,7 @@
 
     <properties>
         <angular-app.target.directory>${project.build.directory}/classes/META-INF/resources</angular-app.target.directory>
-        <angular-app.local-src.directory>${project.basedir}/../my-angular-app/dist/my-angular-app/</angular-app.local-src.directory>
+        <angular-app.local-src.directory>${project.basedir}/../../../my-angular-app/dist/my-angular-app/</angular-app.local-src.directory>
     </properties>
 
     <dependencies>
@@ -91,56 +91,27 @@
             </plugin>
 
             <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
-                    <executions>
-                        <execution>
-                            <id>copy-angular-app</id>
-                            <phase>generate-resources</phase>
-                            <goals>
-                                <goal>copy-resources</goal>
-                            </goals>
-                            <configuration>
-                                <outputDirectory>${angular-app.target.directory}</outputDirectory>
-                                <resources>
-                                    <resource>
-                                        <directory>${angular-app.source.directory}</directory>
-                                    </resource>
-                                </resources>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-angular-app</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${angular-app.target.directory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${angular-app.local-src.directory}</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>local-dev</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>copy-angular-app</id>
-                                <configuration>
-                                    <resources>
-                                        <resource>
-                                            <directory>/Users/tcucchietti/Documents/work/docs/talks/angular-liferay/my-angular-app/dist/my-angular-app</directory>
-                                        </resource>
-                                    </resources>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
