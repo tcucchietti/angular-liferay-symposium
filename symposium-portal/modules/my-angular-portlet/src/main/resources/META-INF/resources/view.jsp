@@ -4,6 +4,10 @@
 
 <app-root></app-root>
 
+<script type="text/javascript">
+    var configurableVariable = 'This is embedded environment';
+</script>
+
 <script type="text/javascript" src="<%=request.getContextPath()%>/runtime.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/polyfills.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/main.js"></script>

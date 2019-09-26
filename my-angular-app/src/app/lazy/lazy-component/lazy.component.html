@@ -1,12 +1,19 @@
 <form>
-  <legend>This is lazy loaded!</legend>
-  <div class="form-group">
-    <label for="name">Input : </label>
-    <input id="name" name="name" class="form-control" [(ngModel)]="name" type="text"/>
-  </div>
+  <legend>Test lazy loaded</legend>
 
-  <div class="form-group">
-    <label>Output : </label>
-    <p *ngIf="name">Hello lazy {{name}}!</p>
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="name">Input : </label>
+        <input id="name" name="name" class="form-control" [(ngModel)]="name" type="text"/>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="form-group">
+        <label>Output : </label>
+        <p *ngIf="name">Hello lazy {{name}}!</p>
+      </div>
+    </div>
   </div>
 </form>

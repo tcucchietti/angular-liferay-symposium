@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  base_href: '/'
+  base_href: '/',
+  configurableVariable: 'This is standalone environment'
 };
 
 /*

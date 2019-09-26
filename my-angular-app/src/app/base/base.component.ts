@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { environment } from "../../environments/environment";
 
 @Component({
   selector: 'app-base',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseComponent {
 
-  name='';
+  name= '';
+  configurableVariable = environment.configurableVariable;
 
 }
